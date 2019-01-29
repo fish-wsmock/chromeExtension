@@ -1,0 +1,45 @@
+{
+  "name": "Fish-WSMock",
+  "description": "Click browser action icon to show wsMockHelper",
+  "version": "0.0.1",
+  "icons": {
+    "16": "res/img/icon.png",
+    "48": "res/img/icon.png",
+    "128": "res/img/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.qydev.netease.com/*",
+        "*://*.qytest.netease.com/*",
+        "*://*.qiyukf.netease.com/*",
+        "*://*.qiyukf.com/*",
+        "*://127.0.0.1/*",
+        "*://localhost/*"
+      ],
+      "js": [
+        "main.js"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "*://*.qydev.netease.com/*",
+    "*://*.qytest.netease.com/*",
+    "*://*.qiyukf.netease.com/*",
+    "*://*.qiyukf.com/*",
+    "*://127.0.0.1/*",
+    "*://localhost/*"
+  ],
+  "browser_action": {
+    "name": "Click to toggle visibility"
+  },
+  "manifest_version": 2
+}
